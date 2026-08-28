@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Nossa Escola</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<!--Cabeçalho-->
+
+<body>
+  <header>
+    <div class="cabecalho-itens">
+      <img class="cabecalho-imagem" src="gabriel2.png" alt="Logo da página">
+      <h1 class="titulo_site">Gabriel de Lima Amorim / Aluno DS</h1>
+      <div class="sociais" aria-label="Redes sociais">
+        <a href="https://wa.me/5541996637775" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <img src="whatsapp.png" alt="WhatsApp">
+        </a>
+        <a href="https://instagram.com/Gbdelimaa" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="instagram.png" alt="Instagram">
+        </a>
+      </div>
+    </div>
+    
+<!-- Menu daora do tonhao -->
+    <nav class="menu-principal" aria-label="Menu principal">
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-button" aria-label="Abrir menu">☰</label>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="certificados.html">Certificados</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  
+
+  <main>
+    <section class="banner1">
+      <img src="gabrielbanner.png" alt="Banner da escola">
+    </section>
+
+    <section class="mapadaminhacasa" aria-label="Mapa local">
+      <iframe
+        src="https://www.google.com/maps?q=Curitiba&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
+    </section>
+
+    <section class="estudante">
+      <h1 class="estudante_titulo">Nosso time</h1>
+      <div class="estudantes_todos">
+        <div class="estudante-div">
+          <img class="estudante-imagem" src="joao2.png" alt="Foto de João">
+          <h3 class="estudante-nome">João Cuiudo</h3>
+          <a href="https://cursos.alura.com.br/dashboard" target="_blank" rel="noopener noreferrer">
+            <img class="estudante-icone" src="logo_nossa_escola.png" alt="Link do site da escola">
+          </a>
+        </div>
+
+        <div class="estudante-div">
+          <img class="estudante-imagem" src="alduan2[.png" alt="Foto de Alduan">
+          <h3 class="estudante-nome">Alduan Poca Bola</h3>
+          <a href="#" class="gremio-link" aria-label="Tocar hino do Grêmio">
+            <img class="estudante-icone gremio-icon" src="Gremio_logo.svg.png" alt="Logo do Grêmio">
+          </a>
+        </div>
+
+        <div class="estudante-div">
+          <img class="estudante-imagem" src="antonio2.png" alt="Foto do professor Antonio">
+          <h3 class="estudante-nome">Prof. Antonio</h3>
+          <a href="#" class="gremio-link" aria-label="Tocar hino do Grêmio">
+            <img class="estudante-icone gremio-icon" src="Gremio_logo.svg.png" alt="Logo institucional">
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<!-- Rodapé -->
+  <footer class="escola">
+    <img class="logo_rodape" src="logo_nossa_escola.png" alt="Logo da escola">
+    <h2 class="escola-titulo">Mais informações entre em contato <a class="link" href="https://wa.me/5541996637775">41 9.9663-7775</a></h2>
+    <p>©2026 | Aluno Cursando ADS | Todos os Direitos Reservados.</p>
+    <p>Política de Privacidade | Proteção de dados | Encarregado de dados</p>
+  </footer>
+
+  <audio id="audio-hino" preload="auto" src="https://drive.google.com/uc?export=download&id=1kjY7x_CJhWx6Z4wFF_uTBPtBFn6sq5bF"></audio>
+
+  <script>
+    const audioHino = document.getElementById('audio-hino');
+    const iconesGremio = document.querySelectorAll('.gremio-icon');
+
+    iconesGremio.forEach((icone) => {
+      icone.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (!audioHino) return;
+
+        audioHino.currentTime = 0;
+        audioHino.play().catch(() => {
+          alert('Clique no ícone novamente para ativar o áudio.');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
